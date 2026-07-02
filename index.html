@@ -23,7 +23,7 @@ body{margin:0;font-family:var(--sans);color:var(--ink);background:#fff;font-size
 img{max-width:100%}
 a{color:inherit}
 .wrap{max-width:1340px;margin:0 auto;padding:0 clamp(18px,2.6vw,34px)}
-.wrap-full{max-width:1760px;margin:0 auto;padding:0 clamp(16px,2vw,32px)}
+.wrap-full{max-width:1640px;margin:0 auto;padding:0 clamp(26px,3.2vw,52px)}
 h1,h2,h3{font-family:var(--serif);line-height:1.16;margin:0}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin:0 0 14px}
 .h2{font-size:clamp(28px,3.6vw,42px);font-weight:700;color:var(--navy)}
@@ -66,10 +66,15 @@ h1,h2,h3{font-family:var(--serif);line-height:1.16;margin:0}
 .trust .goldrule{margin-bottom:12px}
 .trust p{margin:0;font-size:13.5px;color:rgba(255,255,255,.72)}
 .trust b{color:var(--gold-l);font-weight:600}
-/* iMac со скрином ABM */
+/* монитор со скрином ABM — тонкая серебристая рамка */
 .imac-wrap{position:relative}
 .imac-wrap::before{content:'';position:absolute;inset:-8% -6% -4% -6%;background:radial-gradient(60% 55% at 50% 42%,rgba(128,79,164,.5) 0%,rgba(128,79,164,0) 70%);pointer-events:none}
-.imac-wrap img{position:relative;width:100%;height:auto;display:block;filter:drop-shadow(0 40px 70px rgba(0,0,0,.55))}
+.monitor{position:relative;filter:drop-shadow(0 34px 60px rgba(0,0,0,.5))}
+.mon-frame{background:linear-gradient(180deg,#f0f2f5,#c9cdd5);padding:clamp(7px,.7vw,11px);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 2px rgba(0,0,0,.2)}
+.mon-frame img{display:block;width:100%;height:auto;border-radius:9px}
+.mon-stand{width:15%;height:clamp(42px,4.6vw,68px);margin:0 auto;background:linear-gradient(90deg,#989da6,#e8eaee 48%,#a3a8b1)}
+.mon-stand{clip-path:polygon(15% 0,85% 0,100% 100%,0 100%)}
+.mon-foot{width:30%;height:11px;margin:0 auto;border-radius:6px;background:linear-gradient(180deg,#e4e6ea,#969ca5)}
 .float-chip{position:absolute;z-index:3;right:-6px;top:-16px;background:var(--purple);color:#fff;font-size:12.5px;font-weight:700;padding:10px 16px;border-radius:10px;box-shadow:0 14px 34px rgba(128,79,164,.45);transform:rotate(2deg)}
 /* крыша-переход (мотив их «домика») */
 .roof{display:block;width:100%;height:84px;margin-top:-1px}
@@ -137,8 +142,8 @@ section{padding:clamp(56px,8vw,104px) 0}
 .step h3{font-size:19px;color:var(--navy);margin-bottom:10px}
 .step p{margin:0;font-size:14.5px;color:var(--muted)}
 /* фото-блок */
-.photo{position:relative;background:url('assets/img/office.jpg?v=1') center 62%/cover no-repeat;color:#fff}
-.photo .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,7,50,.92) 0%,rgba(10,7,50,.62) 55%,rgba(10,7,50,.42) 100%)}
+.photo{position:relative;background:url('assets/img/office.jpg?v=2') center 45%/cover no-repeat;color:#fff}
+.photo .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,12,22,.9) 0%,rgba(16,12,22,.58) 55%,rgba(16,12,22,.32) 100%)}
 .photo .wrap{position:relative}
 .photo h3{font-size:clamp(26px,3.2vw,38px);color:#fff;max-width:600px}
 .photo p{max-width:560px;color:rgba(255,255,255,.82)}
@@ -160,14 +165,15 @@ section{padding:clamp(56px,8vw,104px) 0}
 .zh-fact b{color:#fff}
 .zh-fact .d{width:8px;height:8px;border-radius:50%;background:var(--yellow);margin-top:6px;flex:none}
 /* контакт */
-.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,56px);align-items:start}
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,56px);align-items:stretch}
 .form{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:clamp(24px,3vw,38px)}
 .form label{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
 .form input,.form textarea{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--soft);outline:none;transition:border .15s}
 .form input:focus,.form textarea:focus{border-color:var(--purple)}
 .form .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form button{margin-top:24px;width:100%}
-.c-card{background:var(--navy);color:#fff;border-radius:16px;padding:clamp(26px,3vw,38px);position:relative;overflow:hidden}
+.c-card{background:var(--navy);color:#fff;border-radius:16px;padding:clamp(26px,3vw,38px);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.c-card .c-note{margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:rgba(255,255,255,.6)}
 .c-card h3{color:#fff;font-size:22px;margin-bottom:6px}
 .c-card .goldrule{margin:16px 0}
 .c-row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;font-size:14.5px;color:rgba(255,255,255,.85)}
@@ -182,8 +188,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:52px 0 40px;po
 .f-rule{max-width:340px;margin:14px auto 22px}
 footer .meta{text-align:center;font-size:13px}
 footer .meta a{color:rgba(255,255,255,.75);text-decoration:none}
-footer .credit{text-align:center;margin-top:18px;font-size:13px}
-footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
+footer .credit{text-align:center;margin-top:20px;font-size:14px}
+footer .credit a{color:var(--arvut);font-weight:800;text-decoration:none;font-size:22px;letter-spacing:.14em;text-transform:uppercase;vertical-align:middle;margin-left:4px}
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);will-change:opacity,transform}
 .reveal.in{opacity:1;transform:none}
@@ -253,7 +259,11 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
       </div>
       <div class="imac-wrap reveal">
         <div class="float-chip">Ваш внешний финдиректор</div>
-        <img src="assets/img/imac-arvut-de.png?v=1" alt="Портал реального времени — баланс, дебиторы и кредиторы на экране">
+        <div class="monitor">
+          <div class="mon-frame"><img src="assets/img/screen-arvut.jpg?v=2" alt="Портал реального времени — баланс, дебиторы и кредиторы на экране"></div>
+          <div class="mon-stand"></div>
+          <div class="mon-foot"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -309,7 +319,7 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
     </div>
     <div class="svc-grid">
       <div class="svc reveal">
-        <div class="ph"><img src="assets/img/svc-realtime.jpg?v=1" alt="Финансовые показатели в реальном времени"><span class="tagline">День в день</span></div>
+        <div class="ph"><img src="assets/img/svc-realtime.jpg?v=2" alt="Финансовые показатели в реальном времени"><span class="tagline">День в день</span></div>
         <div class="body">
           <h3>Бухгалтерия в реальном времени</h3>
           <p>Учёт день в день, а не раз в квартал. Дебиторы, кредиторы и закрытия — без авралов
@@ -317,7 +327,7 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
         </div>
       </div>
       <div class="svc reveal">
-        <div class="ph"><img src="assets/img/svc-cfo.jpg?v=1" alt="Партнёрство с внешним финансовым директором"><span class="tagline">Уровень CFO</span></div>
+        <div class="ph"><img src="assets/img/svc-cfo.jpg?v=2" alt="Партнёрство с внешним финансовым директором"><span class="tagline">Уровень CFO</span></div>
         <div class="body">
           <h3>Внешний финансовый директор</h3>
           <p>Управленческая отчётность, бюджет, планирование ликвидности и регулярные разборы
@@ -325,7 +335,7 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
         </div>
       </div>
       <div class="svc reveal">
-        <div class="ph"><img src="assets/img/svc-fx.jpg?v=1" alt="Мультивалютный учёт EUR и CHF"><span class="tagline">EUR / CHF</span></div>
+        <div class="ph"><img src="assets/img/svc-fx.jpg?v=2" alt="Мультивалютный учёт EUR и CHF"><span class="tagline">EUR / CHF</span></div>
         <div class="body">
           <h3>Мультивалюта EUR / CHF</h3>
           <p>Для компаний с экспортом и импортом: курсовые разницы, счета в двух валютах
@@ -333,7 +343,7 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
         </div>
       </div>
       <div class="svc reveal">
-        <div class="ph"><img src="assets/img/svc-payroll.jpg?v=1" alt="Команда и учёт по филиалам"><span class="tagline">Lohnbuchhaltung</span></div>
+        <div class="ph"><img src="assets/img/svc-payroll.jpg?v=2" alt="Команда и учёт по филиалам"><span class="tagline">Lohnbuchhaltung</span></div>
         <div class="body">
           <h3>Зарплата и филиалы</h3>
           <p>Lohnbuchhaltung, социальные взносы и учёт по подразделениям — прозрачно по каждому
@@ -341,7 +351,7 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
         </div>
       </div>
       <div class="svc reveal">
-        <div class="ph"><img src="assets/img/svc-portal.jpg?v=1" alt="Клиентский портал на ноутбуке и телефоне"><span class="tagline">24/7</span></div>
+        <div class="ph"><img src="assets/img/svc-portal.jpg?v=2" alt="Клиентский портал на ноутбуке и телефоне"><span class="tagline">24/7</span></div>
         <div class="body">
           <h3>Клиентский портал 24/7</h3>
           <p>Цифры вашей компании — с ноутбука или телефона, в любой момент. Портал работает
@@ -349,7 +359,7 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
         </div>
       </div>
       <div class="svc reveal">
-        <div class="ph"><img src="assets/img/svc-nachfolge.jpg?v=1" alt="Планирование наследования и преемственности"><span class="tagline">Nachfolge</span></div>
+        <div class="ph"><img src="assets/img/svc-nachfolge.jpg?v=2" alt="Планирование наследования и преемственности"><span class="tagline">Nachfolge</span></div>
         <div class="body">
           <h3>Налоги, наследование, преемственность</h3>
           <p>Декларации и MWST — само собой. Особая экспертиза: налоги на дарение и наследство,
@@ -382,10 +392,10 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
 <!-- СТОИМОСТЬ -->
 <section id="pricing">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head reveal" style="max-width:none">
       <p class="eyebrow" style="color:var(--purple)">Стоимость</p>
       <h2 class="h2">Честная цена против собственного штата</h2>
-      <p class="sub">Для сравнения: один штатный бухгалтер в Цюрихе обходится в CHF 110–115 тыс. в год,
+      <p class="sub" style="max-width:none">Для сравнения: один штатный бухгалтер в Цюрихе обходится в CHF 110–115 тыс. в год,
       руководитель бухгалтерии — в CHF 150–160 тыс., команда из 2–4 человек — в CHF 220–460 тыс.</p>
     </div>
     <div class="price-grid">
@@ -517,10 +527,10 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
 <!-- КОНТАКТ -->
 <section id="contact" style="background:var(--soft)">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head reveal" style="max-width:none">
       <p class="eyebrow" style="color:var(--purple)">Контакт</p>
       <h2 class="h2">Начнём с короткого разговора</h2>
-      <p class="sub">Расскажите о компании — за 30 минут покажем, как будет выглядеть ваша
+      <p class="sub" style="max-width:none">Расскажите о компании — за 30 минут покажем, как будет выглядеть ваша
       бухгалтерия в реальном времени и сколько вы сэкономите.</p>
     </div>
     <div class="contact">
@@ -543,7 +553,10 @@ footer .credit a{color:var(--arvut);font-weight:700;text-decoration:none}
         <div class="c-row"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Bernhard-Jaeggi-Weg 35<br>8055 Zürich</span></div>
         <div class="c-row"><svg viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l2-4-4-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-4z"/></svg><a href="tel:+41442030487">+41 44 203 04 87</a></div>
         <div class="c-row"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:info@expressconsulting.ch">info@expressconsulting.ch</a></div>
+        <div class="c-row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Ответим в течение одного рабочего дня</span></div>
+        <div class="c-row"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4"/><rect x="2" y="4" width="20" height="13" rx="2"/></svg><span>Встречи — у вас в офисе, у нас или онлайн</span></div>
         <div class="c-langs"><span>DE</span><span>EN</span><span>RU</span><span>SR</span><span>HU</span></div>
+        <p class="c-note">Первая консультация — бесплатно. Покажем портал на примере вашей отрасли.</p>
       </div>
     </div>
   </div>
